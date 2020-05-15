@@ -1,0 +1,33 @@
+1 docker -v 
+2 docker pull nginx or docker image pullnginx  command can be used to pull the image from docker registry
+3 docker image ls command is used to list all the images in the host 
+4 
+5 docker container run nginx
+6 docker comntainer ls command will give you the list of all the containers running
+7 docker container ls - a command will give you list of all running and stopped container
+8 docker inspect nginx to inspect and get the full container id 
+9 docker inspect container_name to inspect the container and find out the image layers used in building the container
+10 docker image pull apache7
+11 docker run apache7
+12 docker inspect apache7 to get the details 
+13 docker port apache7 to get the list of port mappings of the container
+14 http:\\localhost:8080 
+15 docker container apache will give the info about the container it has the attribute size where we can check the size
+16 docker inspect apache 7 under env section we will get a list of all the environment variables setup for the image 
+17 docker port apache7 to get the list of ports the container is exposed too
+18 docker container run -d -p 8080:5001 apache7 
+19 docker image pull ubuntu:version
+docker image pull ubuntu:version
+20 docker container run ubuntu to run in attached mode
+21 docker container run -d to run in  detached mode
+22 docker container ls -a to get information about running and stopped container
+23 docker container run -d apache7
+24 docker 
+25 docker container run ubuntu
+26 docker exec -it ubuntu sh to go inside the shell now press su command to login as root user
+27 echo "File1">file1
+apt-get install firefox
+
+
+
+
