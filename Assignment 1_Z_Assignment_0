@@ -1,32 +1,54 @@
 1 docker -v 
 2 docker pull nginx or docker image pullnginx  command can be used to pull the image from docker registry
 3 docker image ls command is used to list all the images in the host 
-4 
+4 5d118015902f81257aaf639aadc130259632ebe86b1b4dd88f59b4f9a337f872 container id of nginx image
 5 docker container run nginx
 6 docker comntainer ls command will give you the list of all the containers running
 7 docker container ls - a command will give you list of all running and stopped container
-8 docker inspect nginx to inspect and get the full container id 
-9 docker inspect container_name to inspect the container and find out the image layers used in building the container
-10 docker image pull apache7
-11 docker run apache7
-12 docker inspect apache7 to get the details 
-13 docker port apache7 to get the list of port mappings of the container
+8 docker inspect nginx to inspect and get the full container id 5d118015902f81257aaf639aadc130259632ebe86b1b4dd88f59b4f9a337f872
+9 docker inspect container_name to inspect the container and find out the image layers used in building the container 3 layers are used in building nginx image
+10 docker image pull tomcat:7.0.103
+11 docker container run tomcat
+12 docker inspect tomcat to get the details of the ip  
+13 docker port tomcat to get the list of port mappings of the container
 14 http:\\localhost:8080 
-15 docker container apache will give the info about the container it has the attribute size where we can check the size
-16 docker inspect apache 7 under env section we will get a list of all the environment variables setup for the image 
-17 docker port apache7 to get the list of ports the container is exposed too
-18 docker container run -d -p 8080:5001 apache7 
+15 docker inspect tomcat will give the info about the container it has the attribute size where we can check the size
+16 docker inspect tomcat under env section we will get a list of all the environment variables setup for the image 
+17 docker port tomcat to get the list of ports the container is exposed too
+18 docker container run -d -p 8080:5001 tomcat
 19 docker image pull ubuntu:version
 docker image pull ubuntu:version
 20 docker container run ubuntu to run in attached mode
 21 docker container run -d to run in  detached mode
 22 docker container ls -a to get information about running and stopped container
-23 docker container run -d apache7
+23 docker container run -d tomcat
 24 docker 
 25 docker container run ubuntu
 26 docker exec -it ubuntu sh to go inside the shell now press su command to login as root user
 27 echo "File1">file1
-apt-get install firefox
+28 apt-get install firefox
+29 press exit to exit from ubuntu shell
+30 docker container - ls to chek if ubuntu container is still running or not
+31 docker container run --name new ubuntu 
+32 docker exec -it ubuntu sh 
+33 No
+34 yes
+35 docker container run ubuntu 
+36 docker container run ubuntu 
+37 yes
+38
+39 docker images -a -- to list all the applications , docker images-f will filter on certain format docker images-q used to show numeric ids
+40 docker ps -a to list all the running container and stopped container 
+
+ -f		Filter output based on conditions provided
+- -l		Show the latest created container
+ -q		Only display numeric IDs
+ -s size 
+
+
+
+
+
 
 
 
