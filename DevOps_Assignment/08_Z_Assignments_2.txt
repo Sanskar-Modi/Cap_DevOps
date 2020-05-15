@@ -1,0 +1,27 @@
+docker swarm init 
+
+in all the nodes install specific version of docker using 
+
+sudo apt-get install docker-ce=<VERSION_STRING> docker-ce-cli=<VERSION_STRING> containerd.io
+
+docker swarm join-token manager it will show the manager token
+
+docker swarm join --token <manager token > -- to add a node as a manager
+
+docker swarm join --token SWMTKN-1-4nhg2pykch6l2xzm8mdgs4a6qttzdqeyh6npixldh2fylcp3x6-9lfuxzovbh0kbclu2f64ujgqm 192.168.65.3:2377
+
+docker swarm join-token worker it will show the worker token
+
+docker swarm join --token <worker token > -- to add a node as a worker
+
+ docker swarm join --token SWMTKN-1-4nhg2pykch6l2xzm8mdgs4a6qttzdqeyh6npixldh2fylcp3x6-awuwk72jlotfvvby1ns6ja5is 192.168.65.3:2377
+
+now repeat the above step to add another worker node 
+
+docker swarm join --token <worker token > -- to add a node as a worker
+
+Now all the nodes has joined the cluster to verify it use
+
+docker node ls command to get the list of the nodes in the swarm 
+
+Now create a Docker file and add all the non root user in user section to allow non -root users to run docker command in the swarm

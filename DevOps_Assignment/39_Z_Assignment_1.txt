@@ -1,0 +1,5 @@
+$ docker pull ip-10-0-1-102:443/content-dca-tea
+
+$ docker tag ip-10-0-1-102:443/content-dca-tea:1 ip-10-0-1-102:443/content-dca-tea
+
+$ docker trust sign ip-10-0-1-102:443/content-dca-tea:1

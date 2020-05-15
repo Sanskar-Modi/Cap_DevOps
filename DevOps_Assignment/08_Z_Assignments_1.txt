@@ -1,0 +1,24 @@
+ sudo apt-get install docker-ce=<VERSION_STRING> docker-ce-cli=<VERSION_STRING> containerd.io
+ 
+ We can add the non root user login in 2 ways 
+ 
+  creating a group and adding non root user to it 
+ 
+ sudo groupadd docker_login
+ 
+ sudo usermod -aG docker-ce-cli sanskar 
+  or
+  
+  specifying the non root user in the dockerfile in users section
+  
+  FROM ..
+  USER sanskar 
+  
+then build the docker image 
+
+now login as no root user and check if  he can run docker commands or not 
+
+docker run \
+      --log-driver syslog nginx
+      
+  

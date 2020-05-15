@@ -1,0 +1,8 @@
+docker network create --driver=bridge prices-net
+
+docker container run -d --name base-price --network=prices-net linuxacademycontent/prices-base-price:1 image
+
+docker container run -d --name sales --network=prices-net linuxacademycontent/prices-sales:1 image
+
+docker container run -d --name total-price --network=prices-net -p 8080:80 linuxacademycontent/prices-total-price:1
+

@@ -1,0 +1,9 @@
+docker network create -d overlay prices-overlay-net 
+
+docker service create -d --name base-price --replicas 3 --network prices-overlay-net linuxacademycontent/prices-base-price:1
+
+docker service create -d --name sales --replicas 3 --network prices-overlay-net linuxacademycontent/prices-sales:1
+
+docker service create -d --name base-price --replicas 3 --network prices-overlay-net linuxacademycontent/prices-base-price:1
+
+ 

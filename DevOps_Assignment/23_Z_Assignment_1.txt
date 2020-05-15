@@ -1,0 +1,10 @@
+First we need to update the products-fruit service
+
+docker service update --replicas  products-fruit
+
+To create a new service products-vegetables
+
+
+docker service -d --name products-vegetables \
+--replicas 3 --p 8081:80  linuxacademycontent/vegetable-service:1.0.0 image
+

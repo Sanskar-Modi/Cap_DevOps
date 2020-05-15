@@ -1,0 +1,27 @@
+first login in the registry
+
+docker login --username docker  --password d0ck3rrU73z
+
+now build the image 
+now run the container 
+
+$ docker run -d \
+  -p 443:443 \
+  --restart=always \
+  --name registry \
+  -e REGISTRY_HTTP_TLS_CERTIFICATE=/certs/domain.crt \
+  -e REGISTRY_HTTP_TLS_KEY=/certs/domain.key \
+  registry:2
+  
+  
+ now setup is ready 
+ 
+ docker login --username docker  --password d0ck3rrU73z
+now push the image by 
+
+docker image push docker/ip-10-0-1-101:443/test-image:1
+
+docker image pull --name test ip-10-0-1-101:443/test-image:1
+ 
+ 
+ 

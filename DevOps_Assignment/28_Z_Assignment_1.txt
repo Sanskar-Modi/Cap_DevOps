@@ -1,0 +1,22 @@
+docker image pull busybox
+
+docker container run --name counter busybox sh -c 'i=0; while true; do echo "$i: $(date)" >> /var/log/test/1.log; i=$((i+1)); sleep 1; done
+
+docker volume create test-data 
+
+docker container run - d \ --mount source=counter , target =/var/log/test
+
+docker container run --name fluentd k8s.gcr.io/fluentd-gcp:1.30 image
+
+docker container run -d \ --name fluentd --mount source= test-data , target = /var/log/input
+
+
+$ docker run -d \
+  --name fluentd \
+  --mount type=bind,source="/etc/fluentd/fluent.conf", target=/fluentd/etc/fluent.conf
+ fluentd
+ 
+ $ docker run -d \
+  --name fluentd \
+  --mount type=bind,source=/etc/fluentd/output, target=/var/log/output
+ fluentd

@@ -1,0 +1,65 @@
+vim Dockercompose.yml
+
+version: "3"
+
+services:
+
+  fruits:
+    image: linuxacademycontent/fruit-service:1.0.1:fruits
+    ports:
+      - 80
+
+  vegetable:
+    image: linuxacademycontent/vegetable-service:1.0.0:vegetable
+	ports:
+	-80
+	
+	 all:
+    image: linuxacademycontent/all-products:1.0.0:all
+    ports:
+      - 80
+    environment:
+	-FRUITHOST=fruits
+	-FRUITPORT=80
+	-VEGETABLEHOST=vegetable
+	-VEGETABLEPORT=80
+	
+	Now run the service/ deploy the compose
+	
+	docker stack deploy -c Dockercompose.yml
+	
+	Once it is successfull we will get the list of all products 
+	
+	Now to add replicas edit the compose file and change it to 
+	
+	version: "3"
+
+services:
+
+  fruits:
+    image: linuxacademycontent/fruit-service:1.0.1:fruits
+    ports:
+      - 80
+	replicas:3
+	
+  vegetable:
+    image: linuxacademycontent/vegetable-service:1.0.0:vegetable
+	ports:
+	-80
+	replicas:3
+	
+	 all:
+    image: linuxacademycontent/all-products:1.0.0:all
+    ports:
+      - 80
+    environment:
+	-FRUITHOST=fruits
+	-FRUITPORT=80
+	-VEGETABLEHOST=vegetable
+	-VEGETABLEPORT=80
+	
+	save it and restart the compose stack
+	
+	
+	
+	
